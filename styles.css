@@ -1435,6 +1435,25 @@ a {
         font-size: 1rem;
     }
 
+    /* Ajuste vertical optimizado para la sección de servicios en móvil */
+    .services-section {
+        padding: 45px 16px 24px;
+    }
+
+    .services-section .section-header {
+        margin-bottom: 20px;
+    }
+
+    .services-section .section-header h2 {
+        font-size: 1.75rem;
+        margin: 2px 0 6px;
+    }
+
+    .services-section .section-header p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
     /* Ocultar barra de pestañas vertical en móviles para activar el carrusel */
     .services-tabs-bar {
         display: none;
@@ -1457,8 +1476,8 @@ a {
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        gap: 16px;
-        padding: 10px 20px 18px;
+        gap: 14px;
+        padding: 6px 18px 12px;
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
@@ -1467,7 +1486,7 @@ a {
         display: none;
     }
 
-    /* Tarjetas como diapositivas del carrusel */
+    /* Tarjetas compactas y ergonómicas como diapositivas del carrusel */
     .service-card {
         display: flex !important;
         flex-direction: column !important;
@@ -1476,60 +1495,65 @@ a {
         min-width: 88% !important;
         scroll-snap-align: center;
         scroll-snap-stop: normal;
-        padding: 30px 20px !important;
-        text-align: center;
+        padding: 20px 18px 16px !important;
+        text-align: left !important;
         box-sizing: border-box;
         border: 1px solid var(--border-glow);
         background: linear-gradient(180deg, var(--bg-card) 0%, rgba(16, 25, 53, 0.95) 100%);
+        border-radius: 16px;
     }
 
     .service-visual-panel {
-        margin-bottom: 12px;
-        justify-content: center;
+        margin-bottom: 8px;
+        justify-content: flex-start;
     }
 
     .badge-icon-box {
-        width: 110px;
-        height: 110px;
-        border-radius: 20px;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
     }
 
     .service-svg-large {
-        width: 52px;
-        height: 52px;
+        width: 26px;
+        height: 26px;
     }
 
     .service-category {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
+        font-size: 0.72rem;
+        letter-spacing: 0.8px;
     }
 
     .service-title {
-        font-size: 1.45rem;
+        font-size: 1.25rem;
+        line-height: 1.25;
     }
 
     .service-desc {
-        font-size: 0.94rem;
-        line-height: 1.55;
+        font-size: 0.86rem;
+        line-height: 1.45;
         text-align: left;
     }
 
     .service-benefits-list {
+        margin-top: 4px;
         text-align: left;
+        gap: 5px;
     }
 
     .service-benefits-list li {
         justify-content: flex-start;
-        font-size: 0.9rem;
-        gap: 8px;
+        font-size: 0.82rem;
+        gap: 7px;
+        line-height: 1.35;
     }
 
     .service-card-action {
-        margin-top: 14px;
+        margin-top: 10px;
     }
 
     .btn-service-action {
-        font-size: 0.92rem;
+        font-size: 0.88rem;
     }
 
     /* Controles de Navegación del Carrusel en Móvil */
@@ -1537,13 +1561,13 @@ a {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        gap: 18px;
-        margin-top: 12px;
+        gap: 16px;
+        margin-top: 10px;
     }
 
     .carousel-nav-btn {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
         background: var(--bg-card);
         border: 1px solid var(--border-color);
@@ -1563,20 +1587,20 @@ a {
     }
 
     .carousel-arrow-icon {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         stroke: currentColor;
     }
 
     .carousel-dots {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
     }
 
     .carousel-dot {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.25);
         border: 1px solid transparent;
@@ -1586,7 +1610,7 @@ a {
     }
 
     .carousel-dot.active {
-        width: 26px;
+        width: 22px;
         border-radius: 12px;
         background: var(--tiger-blue);
         box-shadow: 0 0 10px rgba(21, 115, 252, 0.6);
