@@ -50,26 +50,6 @@ const serviciosData = {
     }
 };
 
-// 2. Base de Respuestas del Simulador Demo de IA
-const demoChatResponses = {
-    whatsapp: {
-        pregunta: "¿Cómo conectan la IA a mi WhatsApp de ventas?",
-        respuesta: "Conectamos tu número a un modelo de IA entrenado específicamente con tus productos, servicios y políticas de venta. El agente responde de inmediato las 24 horas, califica a los clientes potenciales y, si la consulta requiere atención humana especializada, transfiere el chat al instante a tu equipo."
-    },
-    erp: {
-        pregunta: "¿Pueden sincronizar inventario con mi tienda online?",
-        respuesta: "Sí, de manera totalmente bidireccional. Cada vez que registras una venta en tu tienda física o en tu ecommerce, nuestro sistema actualiza el stock en tiempo real, genera reportes de alerta de reposición y evita ventas sin disponibilidad."
-    },
-    tiempo: {
-        pregunta: "¿Cuánto tiempo toma desarrollar una plataforma a medida?",
-        respuesta: "Dependiendo de la complejidad: prototipos rápidos o integraciones con agentes de IA pueden desplegarse en 1 a 2 semanas. Sistemas integrales (ERP/CRM) suelen estructurarse en sprints de 3 a 6 semanas con entregas funcionales semanales para tu revisión."
-    },
-    costo: {
-        pregunta: "¿Cómo se calcula el presupuesto de mi proyecto?",
-        respuesta: "Trabajamos con presupuestos cerrados y transparentes basados en el alcance exacto de tu solución. Puedes usar nuestro cotizador interactivo más abajo o enviarnos un mensaje para agendar un diagnóstico técnico gratuito sin compromiso."
-    }
-};
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // A. Año de copyright dinámico
@@ -237,63 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // C. Simulador Demo de IA
-    const chatBody = document.getElementById('chat-messages-body');
-    const quickButtons = document.querySelectorAll('.quick-btn');
-    let isBotTyping = false;
-
-    if (chatBody && quickButtons.length > 0) {
-        quickButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (isBotTyping) return; // Evitar spam mientras escribe
-
-                const queryKey = btn.getAttribute('data-query');
-                const qa = demoChatResponses[queryKey];
-                if (!qa) return;
-
-                // 1. Insertar mensaje del usuario
-                const userMsgEl = document.createElement('div');
-                userMsgEl.className = 'chat-msg user-msg';
-                userMsgEl.innerHTML = `
-                    <div class="msg-bubble">${qa.pregunta}</div>
-                    <span class="msg-time">Tú • Ahora</span>
-                `;
-                chatBody.appendChild(userMsgEl);
-                chatBody.scrollTop = chatBody.scrollHeight;
-
-                // 2. Insertar indicador de escribiendo
-                isBotTyping = true;
-                const typingEl = document.createElement('div');
-                typingEl.className = 'chat-msg bot-msg typing-wrapper';
-                typingEl.innerHTML = `
-                    <div class="typing-indicator">
-                        <span class="typing-dot"></span>
-                        <span class="typing-dot"></span>
-                        <span class="typing-dot"></span>
-                    </div>
-                `;
-                chatBody.appendChild(typingEl);
-                chatBody.scrollTop = chatBody.scrollHeight;
-
-                // 3. Responder tras retardo simulado (850ms)
-                setTimeout(() => {
-                    typingEl.remove();
-
-                    const botMsgEl = document.createElement('div');
-                    botMsgEl.className = 'chat-msg bot-msg';
-                    botMsgEl.innerHTML = `
-                        <div class="msg-bubble">${qa.respuesta}</div>
-                        <span class="msg-time">Tiger AI • Ahora</span>
-                    `;
-                    chatBody.appendChild(botMsgEl);
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                    isBotTyping = false;
-                }, 850);
-            });
-        });
-    }
-
-    // D. Configurador / Cotizador Interactivo a WhatsApp
+    // C. Configurador / Cotizador Interactivo a WhatsApp
     const configCards = document.querySelectorAll('.config-card');
     const summaryText = document.getElementById('config-summary-text');
     const btnConfigWhatsApp = document.getElementById('btn-config-whatsapp');
