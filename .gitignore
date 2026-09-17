@@ -1,0 +1,20 @@
+# Archivos y carpetas del entorno de trabajo
+.codegraph/
+.system_generated/
+.gemini/
+
+# Paquete de identidad cruda (Archivos pesados de diseño original)
+identidad/
+
+# Archivos de prueba temporal
+demo-estilos.html
+
+# Dependencias (para futuros paquetes pnpm)
+node_modules/
+.pnpm-store/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+*.tmp
+*.log

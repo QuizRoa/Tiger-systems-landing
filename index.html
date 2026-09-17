@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon con el Isotipo Oficial Tiger Systems -->
+    <link rel="icon" type="image/svg+xml" href="img/logo-icon.svg">
+    <link rel="alternate icon" href="img/logo.png" type="image/png">
+    
+    <!-- SEO Meta Tags -->
+    <title>Tiger Systems | Desarrollo de Software, ERP e Inteligencia Artificial</title>
+    <meta name="description" content="Desarrollo de software a medida, sistemas ERP/CRM, chatbots inteligentes y automatización con IA. Impulsa tu negocio al ecosistema digital con Tiger Systems.">
+    <meta name="keywords" content="desarrollo software, inteligencia artificial, ERP, CRM, chatbots, automatizacion, aplicaciones web, Tiger Systems">
+    <meta name="author" content="Tiger Systems">
+    <meta name="theme-color" content="#0b1126">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tiger Systems | Soluciones de Software & Inteligencia Artificial">
+    <meta property="og:description" content="Automatizamos tus procesos y construimos software escalable con IA de última generación.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/logo-full.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. HEADER / NAVBAR CON LOGOTIPO OFICIAL EN EL LADO IZQUIERDO -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#inicio" class="brand-logo-link" aria-label="Tiger Systems Inicio">
+                <img src="img/logo-full.svg" alt="Tiger Systems Logo" class="brand-logo-img">
+            </a>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#demo-ia">Demo IA</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#cotizador">Cotizador</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#cotizador" class="nav-cta-btn">Cotizar Proyecto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. CONTENEDOR HERO BANNER (IMAGEN DE FONDO + TEXTO CENTRADO Y BOTÓN) -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Software de Alto Rendimiento & Agentes IA</span>
+            </div>
+            <h1 class="hero-title shimmer-text">Automatizamos tus Operaciones y Escalamos tus Ventas con IA</h1>
+            <p class="hero-subtitle">
+                Creamos plataformas web a medida, sistemas ERP/CRM y agentes autónomos de Inteligencia Artificial que trabajan 24/7 para maximizar la rentabilidad de tu empresa.
+            </p>
+            <div class="hero-actions">
+                <a href="#cotizador" class="btn-primary-hero">
+                    <svg viewBox="0 0 24 24" class="btn-icon"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-4.5h-2V7h2z" fill="currentColor"/></svg>
+                    Configurar Cotización Rápida
+                </a>
+                <a href="#demo-ia" class="btn-secondary-hero">
+                    <svg viewBox="0 0 24 24" class="btn-icon"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+                    Probar Demo de IA en Vivo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. FRANJA DE MÉTRICAS & INDICADORES DE CONFIANZA (SOCIAL PROOF) -->
+    <section id="metricas" class="metrics-section">
+        <div class="metrics-container">
+            <div class="metric-card">
+                <div class="metric-number">+99.8%</div>
+                <div class="metric-label">Disponibilidad en la Nube</div>
+                <div class="metric-desc">Arquitecturas tolerantes a fallos con alta escalabilidad.</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">24/7</div>
+                <div class="metric-label">Atención & Operación Continua</div>
+                <div class="metric-desc">Agentes inteligentes que responden y procesan sin pausas.</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">-65%</div>
+                <div class="metric-label">Tiempos Operativos</div>
+                <div class="metric-desc">Automatización de tareas repetitivas y gestión de datos.</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">100%</div>
+                <div class="metric-label">Código Propietario</div>
+                <div class="metric-desc">Tu empresa es dueña absoluta del software y su base de datos.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. APARTADO DE SERVICIOS INTERACTIVO (TABS SHOWCASE) -->
+    <section id="servicios" class="services-section">
+        <div class="section-header">
+            <span class="section-tag">SERVICIOS DE VANGUARDIA</span>
+            <h2>Soluciones Tecnológicas a Medida</h2>
+            <p>Selecciona un área de servicio para explorar el valor técnico y comercial que aportamos a tu negocio.</p>
+        </div>
+
+        <!-- Lista de Botones (Tabs) -->
+        <div class="services-tabs-bar">
+            <button class="tab-btn active" data-service="web">
+                <svg viewBox="0 0 24 24" class="tab-icon"><path d="M8 7L4 12l4 5M16 7l4 5-4 5M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span>Desarrollo Web & Apps</span>
+            </button>
+            <button class="tab-btn" data-service="erp">
+                <svg viewBox="0 0 24 24" class="tab-icon"><rect x="3" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <span>Sistemas ERP / CRM</span>
+            </button>
+            <button class="tab-btn" data-service="ia">
+                <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 2a2 2 0 0 1 2 2v1h.5A3.5 3.5 0 0 1 18 8.5V9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-.5A3.5 3.5 0 0 1 14 21.5V22a2 2 0 0 1-4 0v-.5A3.5 3.5 0 0 1 6.5 18H6a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3v-.5A3.5 3.5 0 0 1 9.5 5H10V4a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="12" r="1.5" fill="currentColor"/><circle cx="15" cy="12" r="1.5" fill="currentColor"/></svg>
+                <span>Chatbots & IA</span>
+            </button>
+            <button class="tab-btn" data-service="auto">
+                <svg viewBox="0 0 24 24" class="tab-icon"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span>Automatización</span>
+            </button>
+        </div>
+
+        <!-- Carrusel / Contenedor de Tarjetas de Servicios -->
+        <div class="services-carousel-wrapper">
+            <div class="services-carousel-track" id="services-carousel-track">
+                
+                <!-- 1. Desarrollo Web & Apps -->
+                <div class="service-card active" data-service="web">
+                    <div class="service-visual-panel">
+                        <div class="badge-icon-box">
+                            <svg viewBox="0 0 24 24" class="service-svg-large"><path d="M8 7L4 12l4 5M16 7l4 5-4 5M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="service-details-panel">
+                        <span class="service-category">DESARROLLO FULL STACK</span>
+                        <h3 class="service-title">Desarrollo Web & Apps a Medida</h3>
+                        <p class="service-desc">
+                            Construimos aplicaciones web modernas, plataformas e-commerce y sistemas nativos rápidos, seguros y diseñados para convertir visitantes en clientes.
+                        </p>
+                        <ul class="service-benefits-list">
+                            <li><span class="check-icon">✓</span> Diseño 100% responsivo y optimizado para móviles.</li>
+                            <li><span class="check-icon">✓</span> Arquitectura escalable y SEO integrado de alto rendimiento.</li>
+                            <li><span class="check-icon">✓</span> Integración de pasarelas de pago y APIs de terceros.</li>
+                        </ul>
+                        <div class="service-card-action">
+                            <a href="https://wa.me/584246072880?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20el%20servicio%20de%20Desarrollo%20Web." class="btn-service-action" target="_blank" rel="noopener noreferrer">
+                                Consultar sobre este servicio →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Sistemas ERP & CRM -->
+                <div class="service-card" data-service="erp">
+                    <div class="service-visual-panel">
+                        <div class="badge-icon-box">
+                            <svg viewBox="0 0 24 24" class="service-svg-large"><rect x="3" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                        </div>
+                    </div>
+                    <div class="service-details-panel">
+                        <span class="service-category">GESTIÓN DE NEGOCIOS</span>
+                        <h3 class="service-title">Sistemas ERP & CRM Integrados</h3>
+                        <p class="service-desc">
+                            Centraliza las operaciones de tu empresa: ventas, control de inventario, facturación y gestión de clientes en una sola plataforma centralizada.
+                        </p>
+                        <ul class="service-benefits-list">
+                            <li><span class="check-icon">✓</span> Automatización de control de stock e inventarios en tiempo real.</li>
+                            <li><span class="check-icon">✓</span> Seguimiento completo de clientes (CRM) y tuberías de ventas.</li>
+                            <li><span class="check-icon">✓</span> Reportes analíticos interactivos y exportación de datos.</li>
+                        </ul>
+                        <div class="service-card-action">
+                            <a href="https://wa.me/584246072880?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20el%20servicio%20de%20Sistemas%20ERP/CRM." class="btn-service-action" target="_blank" rel="noopener noreferrer">
+                                Consultar sobre este servicio →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Chatbots & Asistentes IA -->
+                <div class="service-card" data-service="ia">
+                    <div class="service-visual-panel">
+                        <div class="badge-icon-box">
+                            <svg viewBox="0 0 24 24" class="service-svg-large"><path d="M12 2a2 2 0 0 1 2 2v1h.5A3.5 3.5 0 0 1 18 8.5V9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-.5A3.5 3.5 0 0 1 14 21.5V22a2 2 0 0 1-4 0v-.5A3.5 3.5 0 0 1 6.5 18H6a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3v-.5A3.5 3.5 0 0 1 9.5 5H10V4a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><circle cx="15" cy="12" r="1.2" fill="currentColor"/></svg>
+                        </div>
+                    </div>
+                    <div class="service-details-panel">
+                        <span class="service-category">INTELIGENCIA ARTIFICIAL</span>
+                        <h3 class="service-title">Chatbots & Asistentes con IA</h3>
+                        <p class="service-desc">
+                            Revoluciona la atención al cliente instalando asistentes inteligentes entrenados con la información de tu empresa para responder y vender 24/7.
+                        </p>
+                        <ul class="service-benefits-list">
+                            <li><span class="check-icon">✓</span> Atención inmediata y automatizada a través de WhatsApp y Web.</li>
+                            <li><span class="check-icon">✓</span> Entrenamiento personalizado con la base de conocimientos de tu empresa.</li>
+                            <li><span class="check-icon">✓</span> Reducción de costos de soporte y mayor tasa de conversión.</li>
+                        </ul>
+                        <div class="service-card-action">
+                            <a href="https://wa.me/584246072880?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20el%20servicio%20de%20Chatbots%20e%20IA." class="btn-service-action" target="_blank" rel="noopener noreferrer">
+                                Consultar sobre este servicio →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Automatización de Procesos -->
+                <div class="service-card" data-service="auto">
+                    <div class="service-visual-panel">
+                        <div class="badge-icon-box">
+                            <svg viewBox="0 0 24 24" class="service-svg-large"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="service-details-panel">
+                        <span class="service-category">OPTIMIZACIÓN DE FLUJOS</span>
+                        <h3 class="service-title">Automatización de Procesos & Agentes</h3>
+                        <p class="service-desc">
+                            Elimina tareas repetitivas conectando tus herramientas y desplegando agentes autónomos de IA que procesan documentos, correos y reportes.
+                        </p>
+                        <ul class="service-benefits-list">
+                            <li><span class="check-icon">✓</span> Flujos automatizados que conectan tus aplicaciones favoritas.</li>
+                            <li><span class="check-icon">✓</span> Agentes multi-tarea para clasificación y extracción de datos.</li>
+                            <li><span class="check-icon">✓</span> Mayor productividad y eliminación de errores humanos.</li>
+                        </ul>
+                        <div class="service-card-action">
+                            <a href="https://wa.me/584246072880?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20el%20servicio%20de%20Automatización%20de%20Procesos." class="btn-service-action" target="_blank" rel="noopener noreferrer">
+                                Consultar sobre este servicio →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles del Carrusel (Móviles) -->
+            <div class="carousel-controls" id="services-carousel-controls">
+                <button class="carousel-nav-btn prev-btn" id="carousel-prev-btn" aria-label="Servicio anterior">
+                    <svg viewBox="0 0 24 24" class="carousel-arrow-icon"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="carousel-dots" id="services-carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Ver servicio 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Ver servicio 2"></button>
+                    <button class="carousel-dot" data-index="2" aria-label="Ver servicio 3"></button>
+                    <button class="carousel-dot" data-index="3" aria-label="Ver servicio 4"></button>
+                </div>
+                <button class="carousel-nav-btn next-btn" id="carousel-next-btn" aria-label="Siguiente servicio">
+                    <svg viewBox="0 0 24 24" class="carousel-arrow-icon"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DEMO EN VIVO: SIMULADOR INTERACTIVO DE AGENTE IA -->
+    <section id="demo-ia" class="demo-section">
+        <div class="section-header">
+            <span class="section-tag">TECNOLOGÍA EN ACCIÓN</span>
+            <h2>Experimenta Nuestra Inteligencia Artificial</h2>
+            <p>Interactúa con este simulador para ver cómo nuestros agentes inteligentes atienden y resuelven dudas en segundos.</p>
+        </div>
+
+        <div class="demo-chat-container">
+            <div class="demo-chat-window">
+                <div class="chat-header">
+                    <div class="chat-header-info">
+                        <div class="chat-avatar">
+                            <img src="img/logo-icon.svg" alt="Tiger AI Avatar">
+                        </div>
+                        <div>
+                            <h4>Tiger AI Assistant</h4>
+                            <span class="chat-status"><span class="status-dot"></span> Agente Autónomo en Línea</span>
+                        </div>
+                    </div>
+                    <span class="chat-badge-tech">Modelo Entrenado a Medida</span>
+                </div>
+
+                <div class="chat-body" id="chat-messages-body">
+                    <div class="chat-msg bot-msg">
+                        <div class="msg-bubble">
+                            ¡Hola! 👋 Soy el agente inteligente de demostración de <strong>Tiger Systems</strong>. ¿Cómo puedo ayudarte a optimizar las operaciones o ventas de tu empresa hoy?
+                        </div>
+                        <span class="msg-time">Ahora</span>
+                    </div>
+                </div>
+
+                <!-- Preguntas de prueba rápida -->
+                <div class="chat-quick-questions">
+                    <span class="quick-title">Haz clic para probar una consulta:</span>
+                    <div class="quick-buttons-wrapper">
+                        <button class="quick-btn" data-query="whatsapp">¿Cómo conectan la IA a mi WhatsApp de ventas?</button>
+                        <button class="quick-btn" data-query="erp">¿Pueden sincronizar inventario con mi tienda online?</button>
+                        <button class="quick-btn" data-query="tiempo">¿Cuánto tiempo toma desarrollar una plataforma a medida?</button>
+                        <button class="quick-btn" data-query="costo">¿Cómo se calcula el presupuesto de mi proyecto?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. NUESTRO PROCESO EN 4 PASOS (ELIMINACIÓN DE LA INCERTIDUMBRE) -->
+    <section id="proceso" class="process-section">
+        <div class="section-header">
+            <span class="section-tag">METODOLOGÍA DE INGENIERÍA</span>
+            <h2>Cómo Llevamos tu Proyecto al Éxito</h2>
+            <p>Un flujo de trabajo transparente, ágil y sin sorpresas técnicas.</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-step-card">
+                <div class="step-badge">Paso 01</div>
+                <div class="step-icon">📋</div>
+                <h3>Diagnóstico & Arquitectura</h3>
+                <p>Analizamos a fondo tu modelo de negocio, definimos requerimientos técnicos y diseñamos la arquitectura óptima sin costo inicial.</p>
+                <div class="step-footer">Sin compromiso comercial</div>
+            </div>
+
+            <div class="process-step-card">
+                <div class="step-badge">Paso 02</div>
+                <div class="step-icon">🎨</div>
+                <h3>Diseño & Prototipado</h3>
+                <p>Estructuramos las interfaces interactivas y flujos de usuario para que valides visualmente cómo funcionará la solución antes de programar.</p>
+                <div class="step-footer">Validación garantizada</div>
+            </div>
+
+            <div class="process-step-card">
+                <div class="step-badge">Paso 03</div>
+                <div class="step-icon">⚡</div>
+                <h3>Desarrollo Ágil por Sprints</h3>
+                <p>Escribimos código limpio, robusto y testeado. Te damos acceso a entornos de prueba con avances funcionales cada semana.</p>
+                <div class="step-footer">Entregas incrementales</div>
+            </div>
+
+            <div class="process-step-card">
+                <div class="step-badge">Paso 04</div>
+                <div class="step-icon">🚀</div>
+                <h3>Despliegue & Soporte Continuo</h3>
+                <p>Publicamos tu plataforma en servidores de alta disponibilidad, capacitamos a tu equipo y te acompañamos con soporte técnico post-lanzamiento.</p>
+                <div class="step-footer">Garantía y estabilidad</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONFIGURADOR / COTIZADOR INTERACTIVO A WHATSAPP -->
+    <section id="cotizador" class="configurator-section">
+        <div class="section-header">
+            <span class="section-tag">COTIZADOR INTELIGENTE</span>
+            <h2>Configura tu Proyecto en 1 Minuto</h2>
+            <p>Selecciona los parámetros de tu idea y genera una propuesta preliminar directa para conversar con un ingeniero.</p>
+        </div>
+
+        <div class="configurator-wrapper">
+            <div class="configurator-box">
+                <!-- Paso 1: Tipo de Solución -->
+                <div class="config-step">
+                    <div class="step-title-wrapper">
+                        <span class="step-number-circle">1</span>
+                        <h4>¿Qué solución principal necesita tu negocio?</h4>
+                    </div>
+                    <div class="config-options-grid" data-group="servicio">
+                        <button type="button" class="config-card selected" data-value="Desarrollo Web o App a Medida">
+                            <span class="config-icon">💻</span>
+                            <span class="config-text">Web / App a Medida</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="Sistema Integral ERP / CRM">
+                            <span class="config-icon">📊</span>
+                            <span class="config-text">Sistema ERP / CRM</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="Chatbot & Agente con Inteligencia Artificial">
+                            <span class="config-icon">🤖</span>
+                            <span class="config-text">Chatbot & Agente IA</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="Automatización de Flujos y Procesos">
+                            <span class="config-icon">⚙️</span>
+                            <span class="config-text">Automatización de Tareas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Tamaño de la Empresa -->
+                <div class="config-step">
+                    <div class="step-title-wrapper">
+                        <span class="step-number-circle">2</span>
+                        <h4>¿En qué etapa se encuentra tu empresa o proyecto?</h4>
+                    </div>
+                    <div class="config-options-grid" data-group="etapa">
+                        <button type="button" class="config-card selected" data-value="Emprendimiento o Idea Nueva">
+                            <span class="config-icon">🌱</span>
+                            <span class="config-text">Emprendimiento / Startup</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="Negocio en Crecimiento">
+                            <span class="config-icon">📈</span>
+                            <span class="config-text">Negocio en Crecimiento</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="Empresa Consolidada">
+                            <span class="config-icon">🏢</span>
+                            <span class="config-text">Empresa Consolidada</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paso 3: Urgencia / Tiempo -->
+                <div class="config-step">
+                    <div class="step-title-wrapper">
+                        <span class="step-number-circle">3</span>
+                        <h4>¿Para cuándo deseas tener la solución funcionando?</h4>
+                    </div>
+                    <div class="config-options-grid" data-group="tiempo">
+                        <button type="button" class="config-card selected" data-value="Lo antes posible (1 a 3 semanas)">
+                            <span class="config-icon">🔥</span>
+                            <span class="config-text">Lo antes posible (1-3 sem)</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="En el próximo mes">
+                            <span class="config-icon">🗓️</span>
+                            <span class="config-text">En el próximo mes</span>
+                        </button>
+                        <button type="button" class="config-card" data-value="Evaluando opciones y cotizaciones">
+                            <span class="config-icon">🔍</span>
+                            <span class="config-text">Evaluando opciones</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Resumen dinámico y Botón Final -->
+                <div class="config-summary-panel">
+                    <div class="summary-details">
+                        <span class="summary-label">Resumen de tu selección:</span>
+                        <p id="config-summary-text" class="summary-text">
+                            <strong>Servicio:</strong> Web / App a Medida | <strong>Etapa:</strong> Emprendimiento | <strong>Plazo:</strong> Lo antes posible
+                        </p>
+                    </div>
+                    <a id="btn-config-whatsapp" href="#" class="btn-whatsapp-large" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" class="btn-icon-large"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.81 9.81 0 0 0 12.04 2zm5.8 14.25c-.24.69-1.22 1.32-1.99 1.48-.52.11-1.2.2-3.48-.75-2.92-1.21-4.8-4.17-4.95-4.37-.14-.19-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.27-.29.59-.36.79-.36.2 0 .39.01.56.01.19.01.44-.07.69.53.25.6.86 2.09.94 2.24.08.15.13.33.03.53-.1.2-.15.33-.29.5-.15.17-.31.38-.45.51-.15.15-.31.31-.13.62.18.31.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.46 1.51.31.15.49.13.67-.08.19-.21.79-.92 1.01-1.23.21-.31.43-.26.73-.15.3.11 1.91.9 2.24 1.06.33.16.55.24.63.38.08.14.08.81-.16 1.5z" fill="currentColor"/></svg>
+                        <span>Enviar Configuración por WhatsApp y Recibir Presupuesto</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. APARTADO "SOBRE NOSOTROS" -->
+    <section id="nosotros" class="about-section">
+        <div class="about-container">
+            <div class="section-header" style="text-align: left; margin-bottom: 35px;">
+                <span class="section-tag">EL EQUIPO DETRÁS DE LA TECNOLOGÍA</span>
+                <h2>Sobre Tiger Systems</h2>
+            </div>
+
+            <div class="about-hero-grid">
+                <div class="about-text-column">
+                    <p class="about-lead">
+                        <strong>Tiger Systems</strong> es una firma tecnológica de desarrollo de software y arquitectura de Inteligencia Artificial fundada por dos ingenieros enfocados en código limpio y resultados de negocio.
+                    </p>
+                    <p class="about-desc">
+                        Nuestra identidad fusiona la potencia y agilidad del tigre con el rigor de los corchetes de código estructurado. Diseñamos plataformas a medida, ERPs y agentes autónomos que optimizan procesos internos, reducen fricciones operativas y multiplican tus ventas.
+                    </p>
+                    
+                    <div class="about-pills-row">
+                        <span class="tech-pill">⚡ Código Limpio & Modular</span>
+                        <span class="tech-pill">🤖 Agentes de IA Conectados</span>
+                        <span class="tech-pill">🔒 100% Código Propietario</span>
+                    </div>
+                </div>
+
+                <!-- Ventana de Terminal Estilo macOS con Resaltado de Sintaxis -->
+                <div class="about-terminal-column">
+                    <div class="terminal-box">
+                        <div class="terminal-header">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                            <span class="terminal-title-text">tiger-systems ~ init.ts</span>
+                        </div>
+                        <div class="terminal-content">
+                            <span class="code-comment">// Inicialización de la firma tecnológica</span><br>
+                            <span class="code-keyword">import</span> { <span class="code-var">AIModels</span>, <span class="code-var">FullStackEngine</span> } <span class="code-keyword">from</span> <span class="code-str">'@tiger/core'</span>;<br><br>
+                            <span class="code-keyword">export const</span> <span class="code-var">tigerSystems</span> = <span class="code-keyword">new</span> <span class="code-var">TechFirm</span>({<br>
+                            &nbsp;&nbsp;<span class="code-prop">founders</span>: [<span class="code-str">"2 Desarrolladores Senior"</span>],<br>
+                            &nbsp;&nbsp;<span class="code-prop">mission</span>: <span class="code-str">"Automatizar operaciones y multiplicar ventas"</span>,<br>
+                            &nbsp;&nbsp;<span class="code-prop">codeOwnership</span>: <span class="code-str">"100% del cliente"</span>,<br>
+                            &nbsp;&nbsp;<span class="code-prop">guaranteedSuccess</span>: <span class="code-keyword">true</span><br>
+                            });<br><br>
+                            <span class="code-comment">// Resultado: Software escalable y sin fricciones</span><br>
+                            <span class="code-var">tigerSystems</span>.<span class="code-prop">deploy</span>();
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Características / Valores -->
+            <div class="about-features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Desarrollo Full Stack</h4>
+                    <p>Arquitecturas modernas construidas para soportar alto tráfico y crecer sin limitaciones técnicas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4>Integración Real de IA</h4>
+                    <p>Agentes inteligentes conectados a tus bases de datos, catálogos y canales de mensajería.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Retorno de Inversión</h4>
+                    <p>Cada desarrollo se orienta a objetivos medibles: más ventas, menos costos operativos y mayor eficiencia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h4>Trato Directo con Ingenieros</h4>
+                    <p>Comunicación sin intermediarios. Hablas directamente con los desarrolladores que construyen tu solución.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. PREGUNTAS FRECUENTES (FAQ ACORDEÓN) -->
+    <section id="faq" class="faq-section">
+        <div class="section-header">
+            <span class="section-tag">RESOLVEMOS TUS DUDAS</span>
+            <h2>Preguntas Frecuentes</h2>
+            <p>Todo lo que necesitas saber antes de iniciar tu proyecto con Tiger Systems.</p>
+        </div>
+
+        <div class="faq-accordion-container">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Quién es el dueño del código y los datos una vez finalizado el proyecto?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tu empresa es <strong>100% dueña de todo el código fuente, la base de datos y la propiedad intelectual</strong>. No te atamos a licencias mensuales obligatorias ni retenemos tu información. Al finalizar te entregamos todos los accesos y repositorios.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Cómo se estructura el esquema de pagos del desarrollo?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Trabajamos bajo un modelo seguro y transparente por hitos: típicamente un <strong>50% al iniciar</strong> el proyecto para cubrir arquitectura y diseño, y el <strong>50% restante contra entrega</strong> y aprobación en entorno de pruebas antes del lanzamiento oficial.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Cuánto tiempo toma desarrollar una solución promedio?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Los tiempos varían según el alcance: una landing page de alta conversión o un chatbot de IA puede estar listo en <strong>1 a 2 semanas</strong>, mientras que un sistema ERP/CRM o una plataforma compleja a medida suele tomar entre <strong>3 y 6 semanas</strong> con entregas incrementales semanales.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿El asistente de IA se puede conectar a mi WhatsApp actual?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p><strong>Sí, totalmente.</strong> Integramos el asistente inteligente con la API oficial de WhatsApp o tu número empresarial existente. El agente puede consultar catálogos, agendar citas, responder preguntas técnicas y transferir al cliente a un operador humano cuando sea necesario.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Ofrecen garantía y soporte técnico después del lanzamiento?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí. Todos nuestros proyectos incluyen un período de <strong>garantía técnica gratuita de 30 días</strong> post-despliegue ante cualquier eventualidad, además de planes accesibles de mantenimiento evolutivo, respaldo y monitoreo en la nube.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER CON LOGOTIPO OFICIAL, COPYRIGHT Y LINKS -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#inicio" class="footer-logo-link">
+                    <img src="img/logo-full.svg" alt="Tiger Systems" class="footer-logo-img">
+                </a>
+                <p>Soluciones de Software & Inteligencia Artificial a tu medida.</p>
+            </div>
+
+            <nav class="footer-links">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#demo-ia">Demo IA</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#cotizador">Cotizador</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="https://wa.me/584246072880" target="_blank" rel="noopener noreferrer">WhatsApp Directo</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a>
+                </div>
+                <p class="footer-copy">
+                    &copy; <span id="current-year">2026</span> <strong>Tiger Systems</strong>. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP CON INDICADOR "EN LÍNEA" -->
+    <div class="floating-whatsapp-wrapper">
+        <a href="https://wa.me/584246072880?text=Hola%20Tiger%20Systems,%20quisiera%20asesoría%20sobre%20un%20proyecto%20de%20software/IA." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+            <span class="floating-online-badge">
+                <span class="online-dot"></span>
+                <span>En línea</span>
+            </span>
+            <svg viewBox="0 0 24 24" class="whatsapp-float-icon"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.81 9.81 0 0 0 12.04 2zm5.8 14.25c-.24.69-1.22 1.32-1.99 1.48-.52.11-1.2.2-3.48-.75-2.92-1.21-4.8-4.17-4.95-4.37-.14-.19-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.27-.29.59-.36.79-.36.2 0 .39.01.56.01.19.01.44-.07.69.53.25.6.86 2.09.94 2.24.08.15.13.33.03.53-.1.2-.15.33-.29.5-.15.17-.31.38-.45.51-.15.15-.31.31-.13.62.18.31.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.46 1.51.31.15.49.13.67-.08.19-.21.79-.92 1.01-1.23.21-.31.43-.26.73-.15.3.11 1.91.9 2.24 1.06.33.16.55.24.63.38.08.14.08.81-.16 1.5z" fill="currentColor"/></svg>
+        </a>
+    </div>
+
+    <!-- Script de interactividad -->
+    <script src="script.js"></script>
+</body>
+</html>
