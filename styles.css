@@ -351,17 +351,17 @@ a {
 }
 
 .metrics-container {
-    max-width: 1200px;
+    max-width: 860px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
 .metric-card {
     text-align: center;
-    padding: 10px 15px;
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 15px 25px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .metric-card:last-child {
@@ -1404,19 +1404,7 @@ a {
    ========================================================================== */
 @media (max-width: 1024px) {
     .metrics-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-
-    .metric-card {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        padding-bottom: 20px;
-    }
-
-    .metric-card:nth-child(3),
-    .metric-card:nth-child(4) {
-        border-bottom: none;
+        gap: 30px;
     }
 
     .process-grid {
@@ -1755,14 +1743,18 @@ a {
 
     .metrics-container {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .metric-card {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 20px;
     }
 
     .metric-card:last-child {
         border-bottom: none;
+        padding-bottom: 0;
     }
 
     .process-grid {
