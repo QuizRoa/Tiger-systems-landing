@@ -78,6 +78,56 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
+    // A2. Menú Hamburguesa Móvil Desplegable
+    const navToggleBtn = document.getElementById('nav-toggle-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-item-link');
+
+    if (navToggleBtn && navMenu) {
+        const toggleMenu = (open) => {
+            const isOpen = open !== undefined ? open : !navMenu.classList.contains('active');
+            navToggleBtn.classList.toggle('active', isOpen);
+            navMenu.classList.toggle('active', isOpen);
+            navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
+
+        navToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Cerrar menú al hacer clic en cualquier enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu(false);
+                }
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera del área del menú
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggleBtn.contains(e.target)) {
+                toggleMenu(false);
+            }
+        });
+
+        // Cerrar con tecla Escape (Accesibilidad estándar)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMenu(false);
+            }
+        });
+
+        // Restablecer scroll si la pantalla pasa a resolución de escritorio
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                toggleMenu(false);
+            }
+        });
+    }
+
     // B. Servicios: Pestañas en Escritorio y Carrusel Táctil en Móviles
     const tabButtons = document.querySelectorAll('.tab-btn');
     const serviceCards = document.querySelectorAll('.service-card');
