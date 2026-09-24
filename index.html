@@ -79,7 +79,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles.css?v=2.4">
+    <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
 
@@ -610,7 +610,9 @@
 
             <div class="footer-bottom">
                 <div class="footer-legal">
-                    <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a>
+                    <button type="button" class="legal-trigger-btn" id="open-privacy-btn">Política de Privacidad</button>
+                    <span class="legal-divider">|</span>
+                    <button type="button" class="legal-trigger-btn" id="open-terms-btn">Términos de Servicio</button>
                 </div>
                 <p class="footer-copy">
                     &copy; <span id="current-year">2026</span> <strong>Tiger Systems</strong>. Todos los derechos reservados.
@@ -618,6 +620,25 @@
             </div>
         </div>
     </footer>
+
+    <!-- MODAL DE INFORMACIÓN LEGAL (POLÍTICA DE PRIVACIDAD Y TÉRMINOS) -->
+    <div class="legal-modal-overlay" id="legal-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+        <div class="legal-modal-card">
+            <div class="legal-modal-header">
+                <div class="legal-modal-header-info">
+                    <span class="legal-modal-badge" id="legal-modal-badge">Aviso Legal</span>
+                    <h3 class="legal-modal-title" id="legal-modal-title">Política de Privacidad</h3>
+                </div>
+                <button type="button" class="legal-modal-close-btn" id="legal-modal-close-btn" aria-label="Cerrar modal">&times;</button>
+            </div>
+            <div class="legal-modal-body" id="legal-modal-body">
+                <!-- Contenido legal inyectado dinámicamente -->
+            </div>
+            <div class="legal-modal-footer">
+                <button type="button" class="legal-modal-btn-confirm" id="legal-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
 
     <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP CON INDICADOR "EN LÍNEA" -->
     <div class="floating-whatsapp-wrapper">
@@ -631,6 +652,6 @@
     </div>
 
     <!-- Script de interactividad -->
-    <script src="script.js?v=2.4"></script>
+    <script src="script.js?v=2.5"></script>
 </body>
 </html>

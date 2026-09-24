@@ -294,4 +294,111 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // F. Modal Legal (Política de Privacidad y Términos de Servicio)
+    const legalModalOverlay = document.getElementById('legal-modal-overlay');
+    const legalModalCloseBtn = document.getElementById('legal-modal-close-btn');
+    const legalModalOkBtn = document.getElementById('legal-modal-ok-btn');
+    const legalModalTitle = document.getElementById('legal-modal-title');
+    const legalModalBadge = document.getElementById('legal-modal-badge');
+    const legalModalBody = document.getElementById('legal-modal-body');
+    const openPrivacyBtn = document.getElementById('open-privacy-btn');
+    const openTermsBtn = document.getElementById('open-terms-btn');
+
+    const legalContents = {
+        privacy: {
+            badge: "Protección de Datos & Privacidad",
+            title: "Política de Privacidad",
+            html: `
+                <h4>1. Compromiso de Confidencialidad</h4>
+                <p>En <strong>Tiger Systems</strong> (Caracas, Venezuela), la protección y seguridad de los datos de nuestros clientes y empresas aliadas es un principio rector de ingeniería de software y ética corporativa. Este aviso regula el tratamiento de datos recopilados en nuestra plataforma web oficial.</p>
+
+                <h4>2. Tratamiento de Datos del Cotizador Interactivo</h4>
+                <p>La información técnica seleccionada en nuestro cotizador de proyectos (tipo de desarrollo, requerimientos específicos y número de contacto) tiene como <strong>única y exclusiva finalidad</strong> calcular la estimación presupuestaria y abrir un canal de asesoría directa por WhatsApp.</p>
+                <ul>
+                    <li><strong>No vendemos, no transferimos ni comercializamos</strong> información personal o comercial a terceras partes bajo ninguna circunstancia.</li>
+                    <li>No generamos cadenas de correo masivo ni comunicaciones publicitarias no autorizadas.</li>
+                </ul>
+
+                <h4>3. Analítica y Tecnologías de Navegación</h4>
+                <p>Nuestra web utiliza <strong>Google Analytics 4</strong> y <strong>Microsoft Clarity</strong> con anonimización de direcciones IP. Dichas herramientas recopilan datos agregados de rendimiento (tiempo de carga, secciones visitadas e interacción en pantalla) exclusivamente para auditoría técnica de usabilidad y optimización del servicio.</p>
+
+                <h4>4. Derechos de Acceso y Supresión</h4>
+                <p>Cualquier usuario puede revocar su consentimiento o solicitar la eliminación total de sus datos de contacto de nuestras comunicaciones activas enviando un mensaje directo a nuestro canal verificado de WhatsApp (+58 424-6072880).</p>
+            `
+        },
+        terms: {
+            badge: "Condiciones de Contratación & Servicio",
+            title: "Términos de Servicio",
+            html: `
+                <h4>1. Alcance de los Servicios Profesionales</h4>
+                <p><strong>Tiger Systems</strong> ofrece servicios integrales de arquitectura de sistemas, desarrollo de software a medida, implementación de plataformas ERP/CRM y automatización de flujos con Inteligencia Artificial.</p>
+
+                <h4>2. Naturaleza de las Estimaciones Web</h4>
+                <p>Los precios y tiempos proyectados por el cotizador interactivo de esta landing page representan <strong>estimaciones referenciales</strong> que sirven como base para la planificación inicial. Toda cotización definitiva, cronograma de entregables y especificación técnica se formaliza mediante propuesta técnica personalizada tras la sesión de levantamiento de requerimientos.</p>
+
+                <h4>3. 100% Código Propietario</h4>
+                <p>A diferencia de los modelos SaaS tradicionales con suscripciones perpetuas, los proyectos a medida entregados por Tiger Systems son de <strong>código 100% propietario</strong>, transfiriéndose la titularidad del software y sus componentes al cliente conforme a las condiciones contractuales acordadas.</p>
+
+                <h4>4. Acuerdos de Confidencialidad (NDA)</h4>
+                <p>Mantenemos estricto secreto profesional y confidencialidad industrial sobre cualquier modelo de negocio, proceso operativo, propiedad intelectual o dato estratégico compartido con nosotros en fases de cotización o desarrollo.</p>
+            `
+        }
+    };
+
+    if (legalModalOverlay && legalModalTitle && legalModalBody) {
+        const openLegalModal = (type) => {
+            const data = legalContents[type];
+            if (!data) return;
+
+            legalModalBadge.textContent = data.badge;
+            legalModalTitle.textContent = data.title;
+            legalModalBody.innerHTML = data.html;
+
+            legalModalOverlay.classList.add('active');
+            legalModalOverlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLegalModal = () => {
+            legalModalOverlay.classList.remove('active');
+            legalModalOverlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        if (openPrivacyBtn) {
+            openPrivacyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLegalModal('privacy');
+            });
+        }
+
+        if (openTermsBtn) {
+            openTermsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLegalModal('terms');
+            });
+        }
+
+        if (legalModalCloseBtn) {
+            legalModalCloseBtn.addEventListener('click', closeLegalModal);
+        }
+
+        if (legalModalOkBtn) {
+            legalModalOkBtn.addEventListener('click', closeLegalModal);
+        }
+
+        legalModalOverlay.addEventListener('click', (e) => {
+            if (e.target === legalModalOverlay) {
+                closeLegalModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && legalModalOverlay.classList.contains('active')) {
+                closeLegalModal();
+            }
+        });
+    }
 });
+
