@@ -343,8 +343,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4>4. Acuerdos de Confidencialidad (NDA)</h4>
                 <p>Mantenemos estricto secreto profesional y confidencialidad industrial sobre cualquier modelo de negocio, proceso operativo, propiedad intelectual o dato estratégico compartido con nosotros en fases de cotización o desarrollo.</p>
             `
+        },
+        cookies: {
+            badge: "Transparencia & Cumplimiento RGPD",
+            title: "Política de Cookies",
+            html: `
+                <h4>1. ¿Qué son las Cookies?</h4>
+                <p>Las cookies son pequeños fragmentos de información digital que un sitio web almacena en tu dispositivo para recordar tus preferencias, optimizar la carga de la plataforma y generar estadísticas de usabilidad.</p>
+
+                <h4>2. Cookies que utilizamos en Tiger Systems</h4>
+                <p>Nuestra plataforma opera con los siguientes grupos de cookies:</p>
+                <ul>
+                    <li><strong>Cookies Técnicas (Estrictamente Necesarias)</strong>: Permiten la navegación fluida, el funcionamiento del menú responsivo, el carrusel de servicios, el cálculo del cotizador y recordar tu elección de cookies en <code>localStorage</code>.</li>
+                    <li><strong>Cookies Analíticas y de Rendimiento</strong>:
+                        <ul>
+                            <li><strong>Google Analytics 4 (<code>_ga</code>, <code>_ga_*</code>)</strong>: Recopila métricas anonimizadas de tráfico, procedencia de visitas y tiempo en pantalla para evaluar la relevancia técnica de nuestro contenido.</li>
+                            <li><strong>Microsoft Clarity (<code>_clck</code>, <code>_clsk</code>, etc.)</strong>: Genera mapas de calor de clics y registros de sesión anónimos para auditar la usabilidad visual y corregir errores de interacción.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>3. Privacidad y Datos Sensibles</h4>
+                <p><strong>Tiger Systems no utiliza cookies de seguimiento comercial de terceros para venta de publicidad ni monetiza perfiles de navegación.</strong> Los identificadores analíticos no se cruzan con datos de tarjetas de crédito o identidades personales.</p>
+
+                <h4>4. Control y Desactivación</h4>
+                <p>Puedes revocar tu consentimiento, borrar o bloquear cookies en cualquier momento desde el panel de Privacidad y Seguridad de tu navegador web (Google Chrome, Mozilla Firefox, Safari, Microsoft Edge). Ten en cuenta que desactivar cookies técnicas podría limitar la interactividad del cotizador en línea.</p>
+            `
         }
     };
+
+    const openCookiesBtn = document.getElementById('open-cookies-btn');
+    const openCookiesFromBanner = document.getElementById('open-cookies-from-banner');
 
     if (legalModalOverlay && legalModalTitle && legalModalBody) {
         const openLegalModal = (type) => {
@@ -380,6 +409,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        if (openCookiesBtn) {
+            openCookiesBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLegalModal('cookies');
+            });
+        }
+
+        if (openCookiesFromBanner) {
+            openCookiesFromBanner.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLegalModal('cookies');
+            });
+        }
+
         if (legalModalCloseBtn) {
             legalModalCloseBtn.addEventListener('click', closeLegalModal);
         }
@@ -399,6 +442,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeLegalModal();
             }
         });
+    }
+
+    // G. Banner Flotante de Consentimiento de Cookies
+    const cookieBanner = document.getElementById('cookie-consent-banner');
+    const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
+    const cookieRejectBtn = document.getElementById('cookie-reject-btn');
+
+    if (cookieBanner) {
+        const consentChoice = localStorage.getItem('tiger_cookie_consent');
+
+        if (!consentChoice) {
+            // Mostrar banner con una pequeña pausa para no saturar al usuario
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 800);
+        }
+
+        if (cookieAcceptBtn) {
+            cookieAcceptBtn.addEventListener('click', () => {
+                localStorage.setItem('tiger_cookie_consent', 'accepted');
+                cookieBanner.classList.remove('show');
+            });
+        }
+
+        if (cookieRejectBtn) {
+            cookieRejectBtn.addEventListener('click', () => {
+                localStorage.setItem('tiger_cookie_consent', 'necessary_only');
+                cookieBanner.classList.remove('show');
+            });
+        }
     }
 });
 

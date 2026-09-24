@@ -79,7 +79,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles.css?v=2.5">
+    <link rel="stylesheet" href="styles.css?v=2.6">
 </head>
 <body>
 
@@ -613,6 +613,8 @@
                     <button type="button" class="legal-trigger-btn" id="open-privacy-btn">Política de Privacidad</button>
                     <span class="legal-divider">|</span>
                     <button type="button" class="legal-trigger-btn" id="open-terms-btn">Términos de Servicio</button>
+                    <span class="legal-divider">|</span>
+                    <button type="button" class="legal-trigger-btn" id="open-cookies-btn">Política de Cookies</button>
                 </div>
                 <p class="footer-copy">
                     &copy; <span id="current-year">2026</span> <strong>Tiger Systems</strong>. Todos los derechos reservados.
@@ -621,7 +623,7 @@
         </div>
     </footer>
 
-    <!-- MODAL DE INFORMACIÓN LEGAL (POLÍTICA DE PRIVACIDAD Y TÉRMINOS) -->
+    <!-- MODAL DE INFORMACIÓN LEGAL (POLÍTICA DE PRIVACIDAD, TÉRMINOS Y COOKIES) -->
     <div class="legal-modal-overlay" id="legal-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
         <div class="legal-modal-card">
             <div class="legal-modal-header">
@@ -640,6 +642,22 @@
         </div>
     </div>
 
+    <!-- BANNER FLOTANTE DE CONSENTIMIENTO DE COOKIES (RGPD / GDPR) -->
+    <aside class="cookie-consent-banner" id="cookie-consent-banner" aria-label="Aviso de Cookies" role="region" aria-live="polite">
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-text">
+                <span class="cookie-consent-icon" aria-hidden="true">🍪</span>
+                <p>
+                    Utilizamos cookies técnicas y analíticas (Google Analytics 4 y Microsoft Clarity) para evaluar el rendimiento y optimizar tu experiencia en nuestra plataforma. Puedes revisar los detalles en nuestra <button type="button" class="cookie-policy-inline-btn" id="open-cookies-from-banner">Política de Cookies</button>.
+                </p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept-btn">Aceptar Todo</button>
+                <button type="button" class="cookie-btn cookie-btn-reject" id="cookie-reject-btn">Solo Necesarias</button>
+            </div>
+        </div>
+    </aside>
+
     <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP CON INDICADOR "EN LÍNEA" -->
     <div class="floating-whatsapp-wrapper">
         <a href="https://wa.me/584246072880?text=Hola%20Tiger%20Systems,%20quisiera%20asesoría%20sobre%20un%20proyecto%20de%20software/IA." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
@@ -652,6 +670,6 @@
     </div>
 
     <!-- Script de interactividad -->
-    <script src="script.js?v=2.5"></script>
+    <script src="script.js?v=2.6"></script>
 </body>
 </html>
