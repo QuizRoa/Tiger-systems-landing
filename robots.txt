@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://quizroa.github.io/Tiger-systems-landing/sitemap.xml
