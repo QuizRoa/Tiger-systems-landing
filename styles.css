@@ -2076,3 +2076,91 @@ h1, h2, h3, h4,
         padding: 7px 14px;
     }
 }
+
+.footer-legal {
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   AJUSTES MÓVIL: sin desbordes, áreas táctiles de 44px y banner compacto
+   ========================================================================== */
+@media (max-width: 768px) {
+    .footer-legal {
+        gap: 0 6px;
+    }
+
+    .legal-divider {
+        display: none;
+    }
+
+    .legal-trigger-btn {
+        padding: 12px 8px;
+    }
+
+    .footer-links ul {
+        gap: 0 20px;
+    }
+
+    .footer-links ul li a {
+        display: inline-block;
+        padding: 11px 0;
+    }
+
+    .btn-service-action {
+        display: inline-block;
+        padding: 13px 10px;
+    }
+
+    .carousel-nav-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .carousel-dot {
+        position: relative;
+    }
+
+    .carousel-dot::before {
+        content: '';
+        position: absolute;
+        inset: -18px -4px;
+    }
+
+    .service-category {
+        font-size: 0.75rem;
+    }
+
+    .cookie-consent-banner {
+        bottom: 12px;
+        width: calc(100% - 24px);
+        padding: 14px;
+    }
+
+    .cookie-consent-icon {
+        display: none;
+    }
+
+    .cookie-consent-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .cookie-consent-text p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    .cookie-consent-actions {
+        width: 100%;
+    }
+
+    .cookie-btn {
+        flex: 1;
+        padding: 12px 8px;
+    }
+    /* Evita que el botón flotante de WhatsApp tape el copyright */
+    .main-footer {
+        padding-bottom: 96px;
+    }
+}
