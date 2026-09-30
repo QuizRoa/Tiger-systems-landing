@@ -1,0 +1,6 @@
+Fuentes alojadas en este sitio, distribuidas bajo SIL Open Font License 1.1 (https://openfontlicense.org):
+
+- Inter Variable - Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
+- Space Grotesk Variable - Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+
+Obtenidas del paquete Fontsource (@fontsource-variable/inter y @fontsource-variable/space-grotesk).

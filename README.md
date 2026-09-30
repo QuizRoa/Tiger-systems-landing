@@ -1,86 +1,65 @@
-﻿# 🚀 Tiger Systems - Soluciones de Software & Inteligencia Artificial
+# Tiger Systems - Soluciones de Software & Inteligencia Artificial
 
-Plataforma web corporativa y de captación de clientes de **Tiger Systems**, diseñada bajo estándares de ingeniería de software de alto rendimiento, estética *cyber-tech* moderna e integración de canales de conversión directa hacia WhatsApp.
-
-![Tiger Systems Preview](img/logo-full.svg)
+Landing corporativa y de captación de clientes de **Tiger Systems** (desarrollo a medida, ERP/CRM, chatbots con IA y automatización). Sitio estático sin dependencias, con conversión directa hacia WhatsApp.
 
 ---
 
-## 🌟 Características Principales
+## Secciones
 
-- **Hero Banner de Alto Impacto**: Titular con efecto metálico animado (*shimmer text*), propuesta de valor clara y llamadas a la acción duales hacia cotización y demo interactiva.
-- **Franja de Métricas y Prueba Social**: Indicadores de disponibilidad en la nube (+99.8%), atención continua 24/7, reducción de tiempos operativos y propiedad total del código fuente.
-- **Soluciones Tecnológicas a Medida (Servicios)**:
-  - **Escritorio**: Barra de pestañas interactiva (*Tabs Showcase*) con transiciones suaves entre especialidades.
-  - **Móviles**: **Carrusel táctil horizontal** con aceleración de hardware nativa (`scroll-snap-type`), tarjetas ergonómicas con previsualización de la siguiente diapositiva, botones táctiles y puntos de paginación sincronizados.
-- **Simulador de Asistente IA en Vivo**: Interfaz de chat interactiva que emula las capacidades de los agentes autónomos de Tiger Systems con respuestas automáticas preconfiguradas.
-- **Metodología en 4 Pasos**: Eliminación de incertidumbre para clientes corporativos (Diagnóstico, Sprint Ágil, QA & Seguridad, Despliegue & Garantía).
-- **Cotizador Rápido de Proyectos**: Calculadora interactiva donde el cliente selecciona tipo de plataforma, módulo de IA, plazo de entrega y genera un presupuesto estimado con enlace directo y parametrizado a WhatsApp.
-- **Sobre Nosotros con Terminal macOS**: Presentación de la empresa acompañada de una ventana de código interactiva estilo Unix/macOS con resaltado de sintaxis.
-- **Preguntas Frecuentes (FAQ Acordeón)**: Respuestas a dudas técnicas, tiempos, garantías y propiedad intelectual.
-- **Canal de Conversión Omnipresente**: Botón flotante permanente de WhatsApp con indicador de disponibilidad "En línea" (`+58 424 6072880`).
+- **Hero** con propuesta de valor y doble llamada a la acción (cotizar / explorar servicios).
+- **Métricas** de confianza (atención 24/7 y 100 % código propietario).
+- **Servicios**: pestañas accesibles por teclado en escritorio y carrusel táctil (`scroll-snap`) en móvil.
+- **Proceso** en 4 pasos.
+- **Cotizador**: el visitante elige servicio, etapa y plazo; se genera un mensaje prellenado a WhatsApp.
+- **Sobre nosotros** con terminal de código estilo macOS.
+- **FAQ** en acordeón.
+- **CTA final** antes del footer.
+- **Legal**: modal de Política de Privacidad, Términos y Cookies, y banner de consentimiento.
+- **Botón flotante de WhatsApp** (`+58 424 6072880`).
 
----
+## Privacidad y analítica
 
-## 🛠️ Stack Tecnológico
+Google Analytics 4 y Microsoft Clarity **no se cargan** hasta que el usuario pulsa *Aceptar Todo* (Consent Mode v2). *Solo Necesarias* no carga nada, y la decisión se puede cambiar desde *Preferencias de cookies* en el footer. Con consentimiento se envían estos eventos a GA4:
 
-- **HTML5 Semántico**: Estructuración accesible (`aria-labels`), metadatos optimizados para SEO y OpenGraph.
-- **CSS3 Moderno**: 
-  - Paleta cromática oficial de Tiger Systems: Azul Eléctrico (`#1573fc`), Medianoche (`#0b1126`), Cian Tech (`#38bdf8`) y Plata Metalizada (`#dddddd`).
-  - Efectos *glassmorphism* con desenfoque de fondo (`backdrop-filter`).
-  - Variables CSS (Custom Properties) para arquitectura escalable de diseño.
-  - Desplazamiento táctil y snapping sin librerías externas.
-- **JavaScript Vanilla (ES6+)**:
-  - Manipulación ligera del DOM sin dependencias pesadas.
-  - Sincronización pasiva de scroll con `window.requestAnimationFrame`.
-  - Simulación de tipeo y respuestas del agente inteligente.
-  - Cálculo dinámico de presupuestos en tiempo real.
+| Evento | Cuándo |
+| --- | --- |
+| `generate_lead` (`method: whatsapp`, `location`) | Clic en cualquier enlace a WhatsApp |
+| `cta_click` | Clic en el CTA del menú o del hero |
+| `select_content` | Cambio de pestaña de servicio |
+| `cotizador_option` | Selección de opción en el cotizador |
 
----
+Para contar conversiones en GA4, marca `generate_lead` como evento clave en *Admin > Eventos*.
 
-## 📂 Estructura del Proyecto
+## Stack
+
+HTML5 semántico, CSS3 con variables y JavaScript vanilla (ES6+). Sin build ni librerías.
+
+## Estructura
 
 ```text
-tiger-systems2.0/
-├── img/                  # Logotipos oficiales (SVG) y fondos optimizados
-│   ├── logo-full.svg     # Logotipo corporativo completo
-│   ├── logo-icon.svg     # Isotipo / Ícono del tigre
-│   └── fondo1.2.jpg      # Fondo Hero de alta definición
-├── index.html            # Estructura semántica principal
-├── styles.css            # Hoja de estilos corporativos y responsive design
-├── script.js             # Lógica interactiva, cotizador y asistente IA
-├── .gitignore            # Exclusión de archivos de trabajo y temporales
-└── README.md             # Documentación técnica del repositorio
+├── img/                  # Logos (SVG/PNG), favicons, hero-bg.webp y og-image.jpg (1200x630)
+├── index.html            # Estructura, SEO, Open Graph y JSON-LD
+├── styles.css            # Estilos, responsive, accesibilidad
+├── script.js             # Consentimiento, analítica, servicios, cotizador, FAQ, modal legal
+├── robots.txt
+└── sitemap.xml
 ```
 
----
+## Ejecución local
 
-## 💻 Ejecución Local
+```bash
+python -m http.server 5173
+```
 
-Para visualizar el proyecto localmente sin necesidad de instalar servidores complejos:
+Abre `http://localhost:5173`. También sirve cualquier servidor estático (Live Server, `pnpm dlx serve`).
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/TU_USUARIO/tiger-systems.git
-   cd tiger-systems
-   ```
+## Despliegue
 
-2. **Abrir en el navegador**:
-   - Puedes hacer doble clic en `index.html`.
-   - O utilizar cualquier servidor estático local (como Live Server en VS Code o `pnpm dlx serve`).
+Es un sitio estático: GitHub Pages (rama `main`, carpeta raíz), Vercel o Netlify.
+Si cambias de dominio, actualiza la URL en `index.html` (`canonical`, `og:*`, `twitter:*`, JSON-LD), `robots.txt` y `sitemap.xml`.
 
----
+Al modificar `styles.css` o `script.js`, sube el parámetro `?v=` en `index.html` para invalidar la caché.
 
-## 🚀 Despliegue en Producción
-
-El proyecto está 100% listo para ser desplegado en plataformas estáticas globales de forma gratuita:
-- **GitHub Pages**: En la configuración del repositorio (`Settings > Pages`), seleccionar la rama `main` y la carpeta `/root`.
-- **Vercel**: Importar el repositorio de GitHub y presionar *Deploy* (cero configuración requerida).
-- **Netlify**: Arrastrar la carpeta o conectar mediante GitHub.
-
----
-
-## 📄 Licencia y Derechos
+## Licencia
 
 © 2026 **Tiger Systems**. Todos los derechos reservados.
-Desarrollado con pasión, precisión de ingeniería y enfoque en Inteligencia Artificial.

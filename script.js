@@ -2,53 +2,54 @@
    TIGER SYSTEMS - INTERACTIVIDAD Y LÓGICA DE CONVERSIÓN (script.js)
    ========================================================================== */
 
-// 1. Datos de los Servicios en Pestañas (Tabs Showcase)
-const serviciosData = {
-    web: {
-        titulo: "Desarrollo Web & Apps a Medida",
-        categoria: "DESARROLLO FULL STACK",
-        descripcion: "Construimos aplicaciones web modernas, plataformas e-commerce y sistemas nativos rápidos, seguros y diseñados para convertir visitantes en clientes.",
-        beneficios: [
-            "Diseño 100% responsivo y optimizado para móviles.",
-            "Arquitectura escalable y SEO integrado de alto rendimiento.",
-            "Integración de pasarelas de pago y APIs de terceros."
-        ],
-        badgeIcon: `<svg viewBox="0 0 24 24" class="service-svg-large"><path d="M8 7L4 12l4 5M16 7l4 5-4 5M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`
-    },
-    erp: {
-        titulo: "Sistemas ERP & CRM Integrados",
-        categoria: "GESTIÓN DE NEGOCIOS",
-        descripcion: "Centraliza las operaciones de tu empresa: ventas, control de inventario, facturación y gestión de clientes en una sola plataforma centralizada.",
-        beneficios: [
-            "Automatización de control de stock e inventarios en tiempo real.",
-            "Seguimiento completo de clientes (CRM) y tuberías de ventas.",
-            "Reportes analíticos interactivos y exportación de datos."
-        ],
-        badgeIcon: `<svg viewBox="0 0 24 24" class="service-svg-large"><rect x="3" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>`
-    },
-    ia: {
-        titulo: "Chatbots & Asistentes con IA",
-        categoria: "INTELIGENCIA ARTIFICIAL",
-        descripcion: "Revoluciona la atención al cliente instalando asistentes inteligentes entrenados con la información de tu empresa para responder y vender 24/7.",
-        beneficios: [
-            "Atención inmediata y automatizada a través de WhatsApp y Web.",
-            "Entrenamiento personalizado con la base de conocimientos de tu empresa.",
-            "Reducción de costos de soporte y mayor tasa de conversión."
-        ],
-        badgeIcon: `<svg viewBox="0 0 24 24" class="service-svg-large"><path d="M12 2a2 2 0 0 1 2 2v1h.5A3.5 3.5 0 0 1 18 8.5V9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-.5A3.5 3.5 0 0 1 14 21.5V22a2 2 0 0 1-4 0v-.5A3.5 3.5 0 0 1 6.5 18H6a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3v-.5A3.5 3.5 0 0 1 9.5 5H10V4a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><circle cx="15" cy="12" r="1.2" fill="currentColor"/></svg>`
-    },
-    auto: {
-        titulo: "Automatización de Procesos & Agentes",
-        categoria: "OPTIMIZACIÓN DE FLUJOS",
-        descripcion: "Elimina tareas repetitivas conectando tus herramientas y desplegando agentes autónomos de IA que procesan documentos, correos y reportes.",
-        beneficios: [
-            "Flujos automatizados que conectan tus aplicaciones favoritas.",
-            "Agentes multi-tarea para clasificación y extracción de datos.",
-            "Mayor productividad y eliminación de errores humanos."
-        ],
-        badgeIcon: `<svg viewBox="0 0 24 24" class="service-svg-large"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`
-    }
-};
+// 1. Analítica con consentimiento (GA4 + Microsoft Clarity)
+//    Nada se descarga ni se ejecuta hasta que el usuario pulsa "Aceptar Todo".
+const GA_ID = 'G-GJ91HTBF2C';
+const CLARITY_ID = 'yjwtsjf2x6';
+const CONSENT_KEY = 'tiger_cookie_consent';
+
+let analyticsLoaded = false;
+
+function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+}
+
+function setConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* modo privado: se ignora */ }
+}
+
+function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    // Google Analytics 4 (Consent Mode v2: se concede analytics_storage al aceptar)
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(gaScript);
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+
+    // Microsoft Clarity
+    (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+}
+
+function revokeAnalytics() {
+    gtag('consent', 'update', { analytics_storage: 'denied' });
+    if (typeof window.clarity === 'function') window.clarity('consent', false);
+    analyticsLoaded = false;
+}
+
+// Envía un evento a GA4 únicamente si hay consentimiento
+function track(eventName, params) {
+    if (getConsent() !== 'accepted') return;
+    gtag('event', eventName, params || {});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -123,8 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const serviceKey = btn.getAttribute('data-service');
 
                 // Actualizar estado activo en botones
-                tabButtons.forEach(b => b.classList.remove('active'));
+                tabButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                    b.setAttribute('tabindex', '-1');
+                });
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                btn.setAttribute('tabindex', '0');
+                track('select_content', { content_type: 'servicio', item_id: serviceKey });
 
                 // Alternar tarjeta activa
                 serviceCards.forEach(card => {
@@ -139,6 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 carouselDots.forEach((dot, idx) => {
                     dot.classList.toggle('active', idx === index);
                 });
+            });
+
+            // Teclado (patrón ARIA de pestañas): flechas izquierda/derecha, Inicio y Fin
+            btn.addEventListener('keydown', (e) => {
+                const last = tabButtons.length - 1;
+                let target = null;
+                if (e.key === 'ArrowRight') target = tabButtons[index === last ? 0 : index + 1];
+                if (e.key === 'ArrowLeft') target = tabButtons[index === 0 ? last : index - 1];
+                if (e.key === 'Home') target = tabButtons[0];
+                if (e.key === 'End') target = tabButtons[last];
+                if (target) {
+                    e.preventDefault();
+                    target.focus();
+                    target.click();
+                }
             });
         });
     }
@@ -261,6 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (group === 'etapa') configState.etapa = val;
                 if (group === 'tiempo') configState.tiempo = val;
 
+                card.setAttribute('aria-pressed', 'true');
+                card.parentElement.querySelectorAll('.config-card').forEach(c => {
+                    if (c !== card) c.setAttribute('aria-pressed', 'false');
+                });
+                track('cotizador_option', { group, value: val });
+
                 updateConfigurator();
             });
         });
@@ -321,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </ul>
 
                 <h4>3. Analítica y Tecnologías de Navegación</h4>
-                <p>Nuestra web utiliza <strong>Google Analytics 4</strong> y <strong>Microsoft Clarity</strong> con anonimización de direcciones IP. Dichas herramientas recopilan datos agregados de rendimiento (tiempo de carga, secciones visitadas e interacción en pantalla) exclusivamente para auditoría técnica de usabilidad y optimización del servicio.</p>
+                <p>Nuestra web utiliza <strong>Google Analytics 4</strong> y <strong>Microsoft Clarity</strong> con anonimización de direcciones IP, <strong>únicamente si aceptas las cookies analíticas</strong> en el aviso de cookies. Si eliges \"Solo Necesarias\", estas herramientas no se cargan. Puedes cambiar tu decisión en cualquier momento desde \"Preferencias de cookies\" en el pie de página. Dichas herramientas recopilan datos agregados de rendimiento (tiempo de carga, secciones visitadas e interacción en pantalla) exclusivamente para auditoría técnica de usabilidad y optimización del servicio.</p>
 
                 <h4>4. Derechos de Acceso y Supresión</h4>
                 <p>Cualquier usuario puede revocar su consentimiento o solicitar la eliminación total de sus datos de contacto de nuestras comunicaciones activas enviando un mensaje directo a nuestro canal verificado de WhatsApp (+58 424-6072880).</p>
@@ -376,24 +405,59 @@ document.addEventListener('DOMContentLoaded', () => {
     const openCookiesFromBanner = document.getElementById('open-cookies-from-banner');
 
     if (legalModalOverlay && legalModalTitle && legalModalBody) {
+        let lastFocusedElement = null;
+
         const openLegalModal = (type) => {
             const data = legalContents[type];
             if (!data) return;
 
+            lastFocusedElement = document.activeElement;
+
             legalModalBadge.textContent = data.badge;
             legalModalTitle.textContent = data.title;
             legalModalBody.innerHTML = data.html;
+            legalModalBody.scrollTop = 0;
 
             legalModalOverlay.classList.add('active');
             legalModalOverlay.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+
+            // Accesibilidad: llevar el foco al modal
+            // (con una mínima espera: el modal debe estar ya visible para poder recibir el foco)
+            setTimeout(() => {
+                if (legalModalCloseBtn) legalModalCloseBtn.focus();
+            }, 60);
         };
 
         const closeLegalModal = () => {
             legalModalOverlay.classList.remove('active');
             legalModalOverlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+
+            // Devolver el foco al botón que abrió el modal
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            }
         };
+
+        // Accesibilidad: mantener el foco del teclado dentro del modal mientras está abierto
+        legalModalOverlay.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab' || !legalModalOverlay.classList.contains('active')) return;
+
+            const focusables = legalModalOverlay.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+            if (focusables.length === 0) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
 
         if (openPrivacyBtn) {
             openPrivacyBtn.addEventListener('click', (e) => {
@@ -444,34 +508,83 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // I. Animación de entrada al hacer scroll (se omite si el usuario prefiere menos movimiento)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const revealTargets = document.querySelectorAll(
+            '.section-header, .metric-card, .process-step-card, .configurator-box, .about-text-column, .terminal-box, .feature-card, .faq-item, .final-cta-box'
+        );
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealTargets.forEach((el, i) => {
+            el.classList.add('reveal');
+            // Escalonado ligero dentro de rejillas
+            el.style.transitionDelay = `${(i % 4) * 70}ms`;
+            revealObserver.observe(el);
+        });
+    }
+
     // G. Banner Flotante de Consentimiento de Cookies
     const cookieBanner = document.getElementById('cookie-consent-banner');
     const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
     const cookieRejectBtn = document.getElementById('cookie-reject-btn');
+    const cookiePrefsBtn = document.getElementById('open-cookie-prefs-btn');
+
+    const showBanner = () => cookieBanner && cookieBanner.classList.add('show');
+    const hideBanner = () => cookieBanner && cookieBanner.classList.remove('show');
 
     if (cookieBanner) {
-        const consentChoice = localStorage.getItem('tiger_cookie_consent');
+        const consentChoice = getConsent();
 
-        if (!consentChoice) {
+        if (consentChoice === 'accepted') {
+            loadAnalytics();
+        } else if (!consentChoice) {
             // Mostrar banner con una pequeña pausa para no saturar al usuario
-            setTimeout(() => {
-                cookieBanner.classList.add('show');
-            }, 800);
+            setTimeout(showBanner, 800);
         }
 
         if (cookieAcceptBtn) {
             cookieAcceptBtn.addEventListener('click', () => {
-                localStorage.setItem('tiger_cookie_consent', 'accepted');
-                cookieBanner.classList.remove('show');
+                setConsent('accepted');
+                loadAnalytics();
+                hideBanner();
             });
         }
 
         if (cookieRejectBtn) {
             cookieRejectBtn.addEventListener('click', () => {
-                localStorage.setItem('tiger_cookie_consent', 'necessary_only');
-                cookieBanner.classList.remove('show');
+                setConsent('necessary_only');
+                revokeAnalytics();
+                hideBanner();
             });
         }
+
+        // Permite cambiar de decisión en cualquier momento desde el footer
+        if (cookiePrefsBtn) {
+            cookiePrefsBtn.addEventListener('click', showBanner);
+        }
     }
+
+    // H. Medición de conversiones (solo se envían si el usuario aceptó cookies analíticas)
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="https://wa.me"]');
+        if (link) {
+            const section = link.closest('section, footer, .floating-whatsapp-wrapper');
+            track('generate_lead', {
+                method: 'whatsapp',
+                location: (section && (section.id || section.className)) || 'unknown'
+            });
+        }
+
+        const cta = e.target.closest('.nav-cta-btn, .btn-primary-hero');
+        if (cta) track('cta_click', { cta_text: cta.textContent.trim() });
+    });
 });
 
